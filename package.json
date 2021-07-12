@@ -4,7 +4,8 @@
   "description": "Full Stack Application for planning your bag for different conditions/courses.",
   "main": "index.js",
   "scripts": {
-    "start": "node server"
+    "start": "node server",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   },
   "homepage": "https://github.com/jackpronske/DiscGolfBagChart#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "express": "^4.17.1",
     "jest": "^27.0.6",
     "pg": "^8.6.0"
