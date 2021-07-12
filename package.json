@@ -1,0 +1,25 @@
+{
+  "name": "DiscGolfBagChart",
+  "version": "1.0.0",
+  "description": "Full Stack Application for planning your bag for different conditions/courses.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackpronske/DiscGolfBagChart.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackpronske/DiscGolfBagChart/issues"
+  },
+  "homepage": "https://github.com/jackpronske/DiscGolfBagChart#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^27.0.6",
+    "pg": "^8.6.0"
+  }
+}
