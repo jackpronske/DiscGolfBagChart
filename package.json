@@ -4,6 +4,7 @@
   "description": "Full Stack Application for planning your bag for different conditions/courses.",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --mode=development",
     "start": "node server",
     "test": "jest"
   },
@@ -19,9 +20,17 @@
   },
   "homepage": "https://github.com/jackpronske/DiscGolfBagChart#readme",
   "dependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-react": "^7.14.5",
     "axios": "^0.21.1",
+    "babel-loader": "^8.2.2",
     "express": "^4.17.1",
     "jest": "^27.0.6",
-    "pg": "^8.6.0"
+    "pg": "^8.6.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "webpack": "^5.44.0",
+    "webpack-cli": "^4.7.2"
   }
 }

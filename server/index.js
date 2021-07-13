@@ -1,9 +1,12 @@
 const db = require("../database");
 
+const path = require("path");
 const express = require("express");
 const app = express();
 
-const port = 3000;
+app.use(express.json());
+
+app.use(express.static(path.join(__dirname, "..", "client", "public")));
 
 app.get("/discs", (req, res) => {
   db.getAllDiscs((err, data) => {
@@ -19,6 +22,7 @@ app.post("/discs", (req, res) => {
   res.status(201).send("this is a post request");
 });
 
+const port = 3000;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
