@@ -1,5 +1,5 @@
 {
-  "name": "DiscGolfBagChart",
+  "name": "discgolfbagchart",
   "version": "1.0.0",
   "description": "Full Stack Application for planning your bag for different conditions/courses.",
   "main": "index.js",
