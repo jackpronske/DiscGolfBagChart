@@ -42,5 +42,6 @@ body {
   width: 20px;
   height: 20px;
   border: 1px solid red;
+  background-color: red;
   border-radius: 50%;
 }

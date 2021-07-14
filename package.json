@@ -4,8 +4,8 @@
   "description": "Full Stack Application for planning your bag for different conditions/courses.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=development",
-    "start": "node server",
+    "build": "webpack --mode=development -w",
+    "start": "nodemon server",
     "test": "jest"
   },
   "repository": {
