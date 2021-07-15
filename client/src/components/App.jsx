@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import $ from "jquery";
 import FlightChart from "./FlightChart.jsx";
+import AddDiscForm from "./AddDiscForm.jsx";
 
 class App extends Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class App extends Component {
       ],
     };
     this.retieveDiscs = this.retieveDiscs.bind(this);
+    this.addDisc = this.addDisc.bind(this);
   }
 
   componentDidMount() {
@@ -32,11 +33,25 @@ class App extends Component {
       });
   }
 
+  addDisc(discObj) {
+    console.log(discObj);
+    const formattedDiscObj = {
+      name: discObj.name,
+      speed: [discObj.speed, discObj.glide, discObj.turn, discObj.fade],
+    };
+    const currentBag = this.state.currentBag.slice();
+    currentBag.push(formattedDiscObj);
+    this.setState({
+      currentBag: currentBag,
+    });
+  }
+
   render() {
     const { currentBag } = this.state;
     return (
       <>
         <FlightChart currentBag={currentBag} />
+        <AddDiscForm addDisc={this.addDisc} />
       </>
     );
   }
