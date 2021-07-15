@@ -5,10 +5,10 @@ class AddDiscForm extends React.Component {
     super(props);
     this.state = {
       name: "",
-      speed: 0,
-      glide: 0,
-      turn: 0,
-      fade: 0,
+      speed: "",
+      glide: "",
+      turn: "",
+      fade: "",
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
@@ -16,29 +16,29 @@ class AddDiscForm extends React.Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const name = target.name;
     const value = target.value;
+    const name = target.name;
     this.setState({
       [name]: value,
     });
   }
 
-  handleFormSubmit(e) {
-    e.preventDefault();
-    const { name, speed, glide, turn, fade } = this.state;
-    const { addDisc } = this.props;
-    const formObj = {
-      name,
-      speed: Number(speed),
-      glide: Number(glide),
-      turn: Number(turn),
-      fade: Number(fade),
+  handleFormSubmit(event) {
+    event.preventDefault();
+    const discObj = {
+      name: this.state.name,
+      speed: [
+        Number(this.state.speed),
+        Number(this.state.glide),
+        Number(this.state.turn),
+        Number(this.state.fade),
+      ],
     };
-    addDisc(formObj);
+
+    this.props.addDisc(discObj);
   }
 
   render() {
-    const { name, speed, glide, turn, fade } = this.state;
     return (
       <form onSubmit={this.handleFormSubmit}>
         <label>
@@ -46,7 +46,7 @@ class AddDiscForm extends React.Component {
           <input
             type="text"
             name="name"
-            value={name}
+            value={this.state.name}
             onChange={this.handleInputChange}
           ></input>
         </label>
@@ -56,7 +56,7 @@ class AddDiscForm extends React.Component {
           <input
             type="text"
             name="speed"
-            value={speed}
+            value={this.state.speed}
             onChange={this.handleInputChange}
           ></input>
         </label>
@@ -66,7 +66,7 @@ class AddDiscForm extends React.Component {
           <input
             type="text"
             name="glide"
-            value={glide}
+            value={this.state.glide}
             onChange={this.handleInputChange}
           ></input>
         </label>
@@ -76,7 +76,7 @@ class AddDiscForm extends React.Component {
           <input
             type="text"
             name="turn"
-            value={turn}
+            value={this.state.turn}
             onChange={this.handleInputChange}
           ></input>
         </label>
@@ -86,12 +86,12 @@ class AddDiscForm extends React.Component {
           <input
             type="text"
             name="fade"
-            value={fade}
+            value={this.state.fade}
             onChange={this.handleInputChange}
           ></input>
         </label>
         <br />
-        <input type="submit" value="ADD DISC"></input>
+        <input type="submit"></input>
       </form>
     );
   }

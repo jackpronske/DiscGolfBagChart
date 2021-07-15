@@ -1,5 +1,5 @@
 const { Pool } = require("pg");
-const pool = new Pool({
+const connection = new Pool({
   user: "postgres",
   host: "localhost",
   database: "dgbchart",
@@ -7,12 +7,12 @@ const pool = new Pool({
   port: 5432,
 });
 
-pool.connect().then(() => {
+connection.connect().then(() => {
   console.log("connected to postgres");
 });
 
 const getAllDiscs = (callback) => {
-  pool.query("SELECT * FROM discs", (err, data) => {
+  connection.query("SELECT * FROM discs", (err, data) => {
     if (err) {
       callback(err);
     } else {
@@ -21,6 +21,18 @@ const getAllDiscs = (callback) => {
   });
 };
 
+const addDisc = (disc, callback) => {
+  console.log(disc);
+  // connection.query("INSERT INTO discs WEEHERe", (err, data) => {
+  //   if (err) {
+  //     callback(err);
+  //   } else {
+  //     callback(null, data);
+  //   }
+  // });
+};
+
 module.exports = {
   getAllDiscs,
+  addDisc,
 };

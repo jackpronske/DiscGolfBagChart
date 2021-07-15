@@ -19,6 +19,8 @@ app.get("/discs", (req, res) => {
 });
 
 app.post("/discs", (req, res) => {
+  console.log(req.body);
+  db.addDisc(req.body);
   res.status(201).send("this is a post request");
 });
 

@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.retieveDiscs();
+    // this.retieveDiscs();
   }
 
   retieveDiscs() {
@@ -33,17 +33,21 @@ class App extends Component {
       });
   }
 
-  addDisc(discObj) {
-    console.log(discObj);
-    const formattedDiscObj = {
-      name: discObj.name,
-      speed: [discObj.speed, discObj.glide, discObj.turn, discObj.fade],
-    };
-    const currentBag = this.state.currentBag.slice();
-    currentBag.push(formattedDiscObj);
-    this.setState({
-      currentBag: currentBag,
-    });
+  addDisc(disc) {
+    console.log(disc);
+    // const currentBagCopy = this.state.currentBag.slice();
+    // currentBagCopy.push(disc);
+    // this.setState({
+    //   currentBag: currentBagCopy,
+    // });
+    axios
+      .post("http://localhost:3000/discs", disc)
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   }
 
   render() {
