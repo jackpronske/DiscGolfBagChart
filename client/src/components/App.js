@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import FlightChart from "./FlightChart.jsx";
-import AddDiscForm from "./AddDiscForm.jsx";
+import FlightChart from "./FlightChart";
+import AddDiscForm from "./AddDiscForm";
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +18,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    // this.retieveDiscs();
+    this.retieveDiscs();
   }
 
   retieveDiscs() {
@@ -35,11 +35,6 @@ class App extends Component {
 
   addDisc(disc) {
     console.log(disc);
-    // const currentBagCopy = this.state.currentBag.slice();
-    // currentBagCopy.push(disc);
-    // this.setState({
-    //   currentBag: currentBagCopy,
-    // });
     axios
       .post("http://localhost:3000/discs", disc)
       .then((data) => {

@@ -21,16 +21,7 @@ const getAllDiscs = (callback) => {
   });
 };
 
-const addDisc = (disc, callback) => {
-  console.log(disc);
-  // connection.query("INSERT INTO discs WEEHERe", (err, data) => {
-  //   if (err) {
-  //     callback(err);
-  //   } else {
-  //     callback(null, data);
-  //   }
-  // });
-};
+const addDisc = (disc, callback) => {};
 
 module.exports = {
   getAllDiscs,

@@ -1,5 +1,5 @@
 import React from "react";
-import DiscIcon from "./DiscIcon.jsx";
+import DiscIcon from "./DiscIcon";
 
 const FlightChart = (props) => {
   return (
